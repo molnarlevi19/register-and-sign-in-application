@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>User Sign In</title>
+    <script defer async th:src="@{/login.js}" ></script>
+</head>
+<body>
+
+<h2>User Sign In</h2>
+
+<form onsubmit="loginUser(this.email.value, this.password.value); return false;">
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <div>
+        <button type="submit">Sign In</button>
+    </div>
+</form>
+
+
+
+
+</body>
+</html>

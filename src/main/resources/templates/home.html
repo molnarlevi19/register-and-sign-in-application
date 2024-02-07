@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script defer async th:src="@{/authentication.js}"></script>
+</head>
+<body>
+<div id="responseContainer"></div>
+<div>This is a home page that can be reached by anyone with or without sign-in</div>
+
+<a href="http://localhost:8080/api/app/can/register">Register</a><br>
+<a href="http://localhost:8080/api/app/can/signin">Sign-in</a><br><br>
+
+<button onclick="makeAuthenticatedRequestUser()">User Page</button><br>
+
+<button onclick="makeAuthenticatedRequestAdmin()">Admin Page</button>
+
+</body>
+</html>
