@@ -25,18 +25,18 @@ public class User implements UserDetails {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "user_firstname", nullable = false, unique = true)
+    @Column(name = "user_firstname", nullable = false)
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String firstname;
 
-    @Column(name = "user_lastname", nullable = false, unique = true)
+    @Column(name = "user_lastname", nullable = false)
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String lastname;
 
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, unique = true)
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private String email;
 
@@ -77,5 +77,16 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", role=" + role +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' + '}';
     }
 }
